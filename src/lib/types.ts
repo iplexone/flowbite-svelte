@@ -1,11 +1,10 @@
-import type { fade, fly, scale, slide } from "svelte/transition";
 import type { Coords, Middleware, Placement, Strategy } from "@floating-ui/dom";
-import type { Component, Snippet } from "svelte";
-import type { ClassValue, HTMLAnchorAttributes, HTMLAttributes, HTMLBlockquoteAttributes, HTMLButtonAttributes, HTMLDialogAttributes, HTMLImgAttributes, HTMLInputAttributes, HTMLLabelAttributes, HTMLLiAttributes, HTMLOlAttributes, HTMLSelectAttributes, HTMLSourceAttributes, HTMLTableAttributes, HTMLTdAttributes, HTMLTextareaAttributes, HTMLThAttributes, HTMLTrackAttributes, HTMLVideoAttributes, SVGAttributes, FullAutoFill } from "svelte/elements";
-import { type Writable } from "svelte/store";
-import type { BlurParams, EasingFunction, FadeParams, FlyParams, ScaleParams, SlideParams, TransitionConfig } from "svelte/transition";
-import { tv, type VariantProps } from "tailwind-variants";
 import type { Day } from "date-fns";
+import type { Component, Snippet } from "svelte";
+import type { ClassValue, FullAutoFill, HTMLAnchorAttributes, HTMLAttributes, HTMLBlockquoteAttributes, HTMLButtonAttributes, HTMLDialogAttributes, HTMLImgAttributes, HTMLInputAttributes, HTMLLabelAttributes, HTMLLiAttributes, HTMLOlAttributes, HTMLSelectAttributes, HTMLSourceAttributes, HTMLTableAttributes, HTMLTdAttributes, HTMLTextareaAttributes, HTMLThAttributes, HTMLTrackAttributes, HTMLVideoAttributes, SVGAttributes } from "svelte/elements";
+import { type Writable } from "svelte/store";
+import type { BlurParams, EasingFunction, FadeParams, FlyParams, ScaleParams, SlideParams, TransitionConfig, fade, fly, scale, slide } from "svelte/transition";
+import { type VariantProps } from "tailwind-variants";
 
 // component variants
 import type { AlertVariants } from "$lib/alert/theme";
@@ -15,23 +14,23 @@ import type { ButtonVariants, GradientButtonVariantes, gradientButton } from "$l
 import type { CardVariants } from "$lib/card/theme";
 import type Slide from "$lib/carousel/Slide.svelte";
 import type { CarouselVariants } from "$lib/carousel/theme";
+import type { DatepickerVariants } from "$lib/datepicker/theme";
 import type { DrawerVariants, DrawerheadVariants } from "$lib/drawer/theme";
 import type { DropdownItemVariants } from "$lib/dropdown/theme";
-import type { DatepickerVariants } from "$lib/datepicker/theme";
 import type { FooterCopyrightVariants, FooterLinkVariants } from "$lib/footer/theme";
 import type { IndicatorVariants } from "$lib/indicator/theme";
 import type { ListgroupItemVariants, ListgroupVariants } from "$lib/list-group/theme";
 import type { ModalVariants } from "$lib/modal/theme";
+import type { PaginationItemVariants, PaginationVariants } from "$lib/pagination/theme";
 import type { PopoverVariants } from "$lib/popover/theme";
+import type { ProgressbarVariants, ProgressradialVariants } from "$lib/progress/theme";
 import type { SidebarVariants } from "$lib/sidebar/theme";
 import type { CardPlaceholderVariants, ImagePlaceholderVariants, ListPlaceholderVariants, SkeletonVariants, TextPlaceholderVariants, VideoPlaceholderVariants } from "$lib/skeleton/theme";
 import type { SpinnerVaraiants } from "$lib/spinner/theme";
 import type { StepIndicatorVariants } from "$lib/stepindicator/theme";
-import type { StepperVariants, ProgressStepperVariants, DetailedStepperVariants, VerticalStepperVariants, BreadcrumbStepperVariants, TimelineStepperVariants } from "$lib/stepper/theme";
+import type { BreadcrumbStepperVariants, DetailedStepperVariants, ProgressStepperVariants, StepperVariants, TimelineStepperVariants, VerticalStepperVariants } from "$lib/stepper/theme";
 import type { TableVariants } from "$lib/table/theme";
 import type { TabsVaraints } from "$lib/tabs/theme";
-import type { PaginationItemVariants, PaginationVariants } from "$lib/pagination/theme";
-import type { ProgressbarVariants, ProgressradialVariants } from "$lib/progress/theme";
 import { timeline } from "$lib/timeline/theme";
 import type { ToastVaraints } from "$lib/toast/theme";
 import type { ToolbarButtonVariants, ToolbarGroupVariants, ToolbarVariants } from "$lib/toolbar/theme";
@@ -47,11 +46,11 @@ import type { InputVariants } from "$lib/forms/input-field/theme";
 import type { LabelVariants } from "$lib/forms/label/theme";
 import type { RadioVariants } from "$lib/forms/radio/theme";
 
+import type { PhoneInputVariants } from "$lib/forms/phoneinput/theme";
 import type { RangeVariants } from "$lib/forms/range/theme";
 import type { SearchVariants } from "$lib/forms/search/theme";
 import type { MultiSelectVariants, SelectVariants } from "$lib/forms/select/theme";
 import type { ToggleVariants } from "$lib/forms/toggle/theme";
-import type { PhoneInputVariants } from "$lib/forms/phoneinput/theme";
 import type { TableSearchColor } from "$lib/table/theme";
 
 // typography component variants
@@ -63,12 +62,12 @@ import type { ImgVariants } from "$lib/typography/img/theme";
 import type { ListVariants } from "$lib/typography/list/theme";
 import type { ParagraphVariants } from "$lib/typography/paragraph/theme";
 import type { SpanVariants } from "$lib/typography/span/theme";
-import type { ClipboardVariants } from "./clipboard/theme";
 import type { AccordionItemVariants, AccordionVariants } from "./accordion/theme";
 import type { AvatarVariants } from "./avatar/theme";
 import type { BottomNavHeaderItemVariants, BottomNavHeaderVariants, BottomNavItemVariants, BottomNavVariants } from "./bottom-navigation/theme";
 import type { BreadcrumbItemVariants, BreadcrumbVariants } from "./breadcrumb/theme";
 import type { ButtonGroupVariants } from "./button-group/theme";
+import type { ClipboardVariants } from "./clipboard/theme";
 import type { AndroidVariants, DefaultMockupVariants, DesktopVariants, IosVariants, LaptopVariants, SmartwatchVariants, TabletVariants } from "./device-mockups/theme";
 
 // plugins component variants
@@ -848,6 +847,7 @@ export interface SelectProps<T> extends SelectVariants, Omit<HTMLSelectAttribute
   placeholder?: string;
   selectClass?: ClassValue;
   clearable?: boolean;
+  clearedValue?: T | "";
   clearableSvgClass?: ClassValue;
   clearableColor?: CloseButtonVariants["color"];
   clearableClass?: ClassValue;
