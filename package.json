@@ -1,6 +1,6 @@
 {
   "name": "flowbite-svelte",
-  "version": "1.10.12",
+  "version": "1.10.13",
   "description": "Flowbite components for Svelte",
   "main": "dist/index.js",
   "author": {
@@ -32,7 +32,8 @@
     "llm": "svelte-doc-llm",
     "ch": "npx changeset",
     "cv": "npx changeset version",
-    "cp": "npx changeset publish"
+    "cp": "npx changeset publish",
+    "package:publish": "standard-version && git push --follow-tags origin main && npm publish"
   },
   "devDependencies": {
     "@changesets/cli": "2.29.5",
@@ -134,7 +135,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/themesberg/flowbite-svelte.git"
+    "url": "git+https://github.com/iplexone/flowbite-svelte.git"
   },
   "dependencies": {
     "@floating-ui/dom": "^1.7.2",

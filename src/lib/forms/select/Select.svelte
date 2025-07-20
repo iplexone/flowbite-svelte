@@ -13,6 +13,7 @@
   const clearAll = () => {
     if (elementRef) {
       elementRef.value = "";
+      elementRef.selectedIndex = 0;
       value = undefined;
     }
     if (clearableOnClick) clearableOnClick();
